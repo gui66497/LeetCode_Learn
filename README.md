@@ -1,13 +1,2 @@
 # LeetCode_Learn
-LeetCode�㷨ѧϰ
-
-
-
-
-
-
-
-
-
-
-
+LeetCode算法学习
