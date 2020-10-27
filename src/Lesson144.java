@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 // 144. 二叉树的前序遍历
 // 给定一个二叉树，返回它的 前序 遍历。
@@ -23,6 +26,23 @@ class Solution144 {
         return res;
     }
 
+    public List<Integer> preorderTraversal2(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new LinkedList<>();
+
+        TreeNode node = root;
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                res.add(node.val);
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            node = node.right;
+        }
+        return res;
+    }
+
     void preorder(List<Integer> res, TreeNode node) {
         if (node != null) {
             res.add(node.val);
@@ -38,7 +58,9 @@ class Solution144 {
         node1.right = node2;
         node2.left = node3;
         Solution144 solution = new Solution144();
-        List<Integer> res = solution.preorderTraversal(node1);
-        System.out.println(res);
+        List<Integer> res1 = solution.preorderTraversal(node1);
+        System.out.println(res1);
+        List<Integer> res2 = solution.preorderTraversal2(node1);
+        System.out.println(res2);
     }
 }
