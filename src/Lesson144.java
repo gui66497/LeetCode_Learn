@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 // 144. 二叉树的前序遍历
 // 给定一个二叉树，返回它的 前序 遍历。
