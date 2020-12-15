@@ -42,6 +42,9 @@ class Solution42 {
 
     // 动态编程 提前准备两个数组存储每个点左边和右边的最大值
     public int trap2(int[] height) {
+        if(height == null || height.length == 0){
+            return 0;
+        }
         int res = 0;
         int length = height.length;
         int[] leftArr = new int[length];
