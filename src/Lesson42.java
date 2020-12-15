@@ -40,10 +40,35 @@ class Solution42 {
         return res;
     }
 
+    // 动态编程 提前准备两个数组存储每个点左边和右边的最大值
+    public int trap2(int[] height) {
+        int res = 0;
+        int length = height.length;
+        int[] leftArr = new int[length];
+        int[] rightArr = new int[length];
+        leftArr[0] = height[0];
+        for (int i = 1; i < length; i++) {
+            leftArr[i] = Math.max(height[i], leftArr[i - 1]);
+        }
+        rightArr[length - 1] = height[length - 1];
+        for (int j = length - 2; j >= 0; j--) {
+            rightArr[j] = Math.max(height[j], rightArr[j + 1]);
+        }
+        for (int m = 1; m < length - 1; m++) {
+            int val = Math.min(leftArr[m], rightArr[m]) - height[m];
+            if (val > 0) {
+                res += Math.min(leftArr[m], rightArr[m]) - height[m];
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
-        int[] nums = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+        int[] nums = new int[] { 4, 2, 0, 3, 2, 5 };
         Solution42 solution = new Solution42();
         int res = solution.trap(nums);
+        int res2 = solution.trap2(nums);
         System.out.println(res);
+        System.out.println(res2);
     }
 }
