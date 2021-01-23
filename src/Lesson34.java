@@ -6,7 +6,6 @@
 // 进阶：
 
 // 你可以设计并实现时间复杂度为 O(log n) 的算法解决此问题吗？
- 
 
 // 示例 1：
 
@@ -20,7 +19,6 @@
 
 // 输入：nums = [], target = 0
 // 输出：[-1,-1]
- 
 
 // 提示：
 
@@ -36,12 +34,15 @@ class Solution34 {
             return new int[] { -1, -1 };
         }
         int left = findFirst(nums, target);
+        if (left == -1) {
+            return new int[] { -1, -1 };
+        }
         int right = findLast(nums, target);
 
         return new int[] { left, right };
     }
 
-    //第一次出现位置
+    // 第一次出现位置
     int findFirst(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
@@ -61,12 +62,12 @@ class Solution34 {
         return -1;
     }
 
-    //最后出现位置
+    // 最后出现位置
     int findLast(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
-            //这里要向上取整 否则死循环
+            // 这里要向上取整 否则死循环
             int mid = (left + right + 1) >>> 1;
             if (nums[mid] > target) {
                 right = mid - 1;

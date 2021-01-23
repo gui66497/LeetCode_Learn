@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +64,6 @@ class Solution36 {
             cols.add(new HashMap<>());
             cubes.add(new HashMap<>());
         }
-
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
