@@ -34,7 +34,7 @@ import java.util.List;
 // 0 <= s.length <= 3000
 // s 仅由数字组成
 
-class Solution93 {
+class Lesson93 {
 
     List<String> res = new ArrayList<>();
 
@@ -77,7 +77,7 @@ class Solution93 {
     }
 
     public static void main(String[] args) {
-        Solution93 solution = new Solution93();
+        Lesson93 solution = new Lesson93();
         List<String> res = solution.restoreIpAddresses("25525511135");
         System.out.println("res:" + res);
     }
