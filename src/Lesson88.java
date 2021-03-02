@@ -23,7 +23,7 @@
 //1 <= m + n <= 200
 //-109 <= nums1[i], nums2[i] <= 109
 
-class Solution88 {
+class Lesson88 {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         // 两个指针 复制一份nums1出来
@@ -43,9 +43,9 @@ class Solution88 {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
-        int[] nums2 = new int[]{2, 5, 6};
-        Solution88 solution = new Solution88();
+        int[] nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+        int[] nums2 = new int[] { 2, 5, 6 };
+        Lesson88 solution = new Lesson88();
         solution.merge(nums1, 3, nums2, 3);
         System.out.println("res:" + nums1);
     }
