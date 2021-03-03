@@ -24,7 +24,7 @@ class Lesson215 {
     }
 
     public int findKthLargest2(int[] nums, int k) {
-        int len=nums.length;
+        int len = nums.length;
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int num : nums) {
             queue.offer(num);
@@ -37,8 +37,8 @@ class Lesson215 {
 
     public static void main(String[] args) {
         Lesson215 solution = new Lesson215();
-        int res = solution.findKthLargest(new int[]{2, 2, 3, 4, 4}, 2);
-        int res2 = solution.findKthLargest2(new int[]{2, 2, 3, 4, 4}, 2);
+        int res = solution.findKthLargest(new int[] { 2, 2, 3, 4, 4 }, 2);
+        int res2 = solution.findKthLargest2(new int[] { 2, 2, 3, 4, 4 }, 2);
         System.out.println(res);
         System.out.println(res2);
     }
