@@ -38,10 +38,26 @@ class Solution35 {
         return res;
     }
 
+    public int searchInsert2(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length;
+        while (start < end) {
+            int mid = (start + end) >>> 1;
+            if (nums[mid] < target) {
+                start = mid + 1;
+            } else if (nums[mid] > target) {
+                end = mid;
+            } else {
+                return mid;
+            }
+        }
+        return start;
+    }
+
     public static void main(String[] args) {
-        int[] nums = new int[] { 2, 3, 5, 6 };
+        int[] nums = new int[] { 1, 3, 5, 7 };
         Solution35 solution = new Solution35();
-        int res = solution.searchInsert(nums, 1);
+        int res = solution.searchInsert2(nums, 8);
         System.out.println("res:" + res);
     }
 }
