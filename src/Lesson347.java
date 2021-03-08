@@ -31,7 +31,7 @@ class Lesson347 {
             map.put(key, map.getOrDefault(key, 0) + 1);
         }
         // 默认小顶堆
-        PriorityQueue<Integer> queue = new PriorityQueue<>(k, (a, b) -> map.get(a).compareTo(map.get(b)));
+        PriorityQueue<Integer> queue = new PriorityQueue<>(k, (a, b) -> map.get(a) - (map.get(b)));
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (queue.size() < k) {
                 queue.offer(entry.getKey());
