@@ -20,7 +20,7 @@ import java.util.List;
 //[]
 //]
 
-class Solution90 {
+class Lesson90 {
 
     List<List<Integer>> res = new ArrayList<>();
 
@@ -49,7 +49,7 @@ class Solution90 {
     }
 
     public static void main(String[] args) {
-        Solution90 solution = new Solution90();
+        Lesson90 solution = new Lesson90();
         List<List<Integer>> res = solution.subsetsWithDup(new int[]{1, 2, 2});
         System.out.println("res:" + res);
     }
