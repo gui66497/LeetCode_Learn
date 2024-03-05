@@ -36,7 +36,7 @@ import java.util.Arrays;
 class Lesson322_2 {
 
     public int coinChange(int[] coins, int amount) {
-        // dp[i][j]
+        // dp[i] = min{dp[i-coin[j]] + 1}
         int n = coins.length;
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, amount + 1);
@@ -48,12 +48,12 @@ class Lesson322_2 {
                 }
             }
         }
-        return dp[amount];
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 
     public static void main(String[] args) {
         int[] coins = { 1, 2, 5 };
-        int amount = 6;
+        int amount = 3;
         Lesson322_2 solution = new Lesson322_2();
         int res = solution.coinChange(coins, amount);
         System.out.println(res);
