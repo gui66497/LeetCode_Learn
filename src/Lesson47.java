@@ -24,7 +24,7 @@ import java.util.List;
 //1 <= nums.length <= 8
 //-10 <= nums[i] <= 10
 
-class Solution47 {
+class Lesson47 {
     public List<List<Integer>> permuteUnique(int[] nums) {
         int n = nums.length;
         List<List<Integer>> res = new ArrayList<>();
@@ -60,7 +60,7 @@ class Solution47 {
 
     public static void main(String[] args) {
         int[] nums = new int[] { 1, 1, 2 };
-        Solution47 solution = new Solution47();
+        Lesson47 solution = new Lesson47();
         List<List<Integer>> res = solution.permuteUnique(nums);
         System.out.println(res);
     }
