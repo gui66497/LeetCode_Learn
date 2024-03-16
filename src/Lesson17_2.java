@@ -17,8 +17,11 @@ import java.util.Map;
 // 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
 
 class Lesson17_2 {
-    public List<String> letterCombinations(String digits) {;
+    public List<String> letterCombinations(String digits) {
         List<String> combinations = new ArrayList<>();
+        if (digits == null || digits.length() < 1) {
+            return new ArrayList<>();
+        }
         Map<Character, String> phoneMap = new HashMap<Character, String>() {{
             put('2', "abc");
             put('3', "def");
@@ -30,7 +33,7 @@ class Lesson17_2 {
             put('9', "wxyz");
         }};
         StringBuilder sb = new StringBuilder();
-        backTrack(digits,phoneMap,0, combinations,sb);
+        backTrack(digits, phoneMap, 0, combinations, sb);
         return combinations;
     }
 
@@ -46,7 +49,6 @@ class Lesson17_2 {
             backTrack(digits, phoneMap, index + 1, combinations, sb);
             sb.deleteCharAt(index);
         }
-
     }
 
     public static void main(String[] args) {
