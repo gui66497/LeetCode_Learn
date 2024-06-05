@@ -1,3 +1,4 @@
+import java.util.Deque;
 import java.util.LinkedList;
 
 // 155. 最小栈
@@ -34,8 +35,8 @@ import java.util.LinkedList;
 class Lesson155_2 {
     class MinStack {
 
-        LinkedList<Integer> list;
-        LinkedList<Integer> minList;
+        Deque<Integer> list;
+        Deque<Integer> minList;
 
         public MinStack() {
             list = new LinkedList<>();
